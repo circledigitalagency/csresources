@@ -41,7 +41,7 @@ const AnimatedMenuOptions = ({
 					ease: "easeOut",
 				}}
 				className={cn(
-					"font-allianceNo1 text-sm cursor-pointer",
+					"font-allianceNo1 text-sm cursor-pointer hover:text-lightBlue",
 					isHovering && activeOption == option.label && "underline"
 				)}
 				key={index}

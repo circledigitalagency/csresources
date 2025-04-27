@@ -5,6 +5,7 @@ import HeroCarousel from "~/components/hero-carousel";
 import MainLayout from "~/components/main-layout";
 import { keyOfferings, commodities, affiliates } from "~/lib/data";
 import { JusticeScale01Icon } from "hugeicons-react";
+import AnimatedLink from "~/components/animated-link";
 
 const Home = () => {
 	return (
@@ -16,27 +17,32 @@ const Home = () => {
 					<div className="sm:grid sm:grid-cols-2 flex flex-col gap-10 sm:w-[75%]">
 						<div className="flex flex-col space-y-5">
 							<p className="text-base font-light">
-								A leading <span className="font-medium">100% Black-owned</span>{" "}
+								A leading{" "}
+								<span className="font-medium text-mainBlue">
+									100% Black-owned
+								</span>{" "}
 								South African company specialising in the wholesale supply of
 								crucial bulk commodities, agricultural goods, and petroleum
 								products.
 							</p>
-							<Link
-								to="/about-us"
-								className="sm:flex p-2 border border-1 border-black rounded-full text-sm w-32 items-center justify-center hidden"
-							>
-								Learn more
-							</Link>
+							<AnimatedLink path="/about-us" title="Learn more" />
 						</div>
 						<div className="flex flex-col space-y-5">
 							<p className="text-base font-light">
 								As a{" "}
-								<span className="font-medium">Level 1 B-BBEE contributor</span>,
-								we are deeply committed to fostering{" "}
-								<span className="font-medium">sustainable growth</span>, driving{" "}
-								<span className="font-medium">economic transformation</span>,
-								and{" "}
-								<span className="font-medium">
+								<span className="font-medium text-mainBlue">
+									Level 1 B-BBEE contributor
+								</span>
+								, we are deeply committed to fostering{" "}
+								<span className="font-medium text-mainBlue">
+									sustainable growth
+								</span>
+								, driving{" "}
+								<span className="font-medium text-mainBlue">
+									economic transformation
+								</span>
+								, and{" "}
+								<span className="font-medium text-mainBlue">
 									empowering local communities
 								</span>
 								, actively uplifting South Africa's economy. Partner with us for
@@ -52,14 +58,16 @@ const Home = () => {
 					</div>
 				</div>
 
-				<div className="sm:flex sm:flex-row grid grid-cols-2 gap-8 justify-between items-center sm:px-32 px-4 py-16 bg-slate-50">
+				<div className="sm:flex sm:flex-row grid grid-cols-2 gap-8 justify-between items-center sm:px-32 px-4 py-16 bg-lightBlue">
 					{keyOfferings.map((ko, index) => (
 						<div
 							key={index}
 							className="flex flex-col justify-center items-center sm:space-x-4 space-y-2"
 						>
-							<ko.icon size={40} className="text-gold" />
-							<p className="text-base font-normal text-center">{ko.label}</p>
+							<ko.icon size={40} className="text-white" />
+							<p className="text-base font-normal text-center text-white">
+								{ko.label}
+							</p>
 						</div>
 					))}
 				</div>
@@ -85,7 +93,6 @@ const Home = () => {
 									<div className="absolute inset-0 bg-black/50 z-10"></div>
 								</div>
 								<div className="relative z-10 flex flex-col justify-center h-full p-6 space-y-10">
-									{/* <p className="text-white text-2xl">Cornerstone</p> */}
 									<p className="text-white text-xl font-semibold">
 										{com.label}
 									</p>

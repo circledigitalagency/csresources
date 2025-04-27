@@ -25,6 +25,9 @@ export default {
 			},
 			colors: {
 				gold: "#C9A227",
+				mainBlue: "#314857",
+				lightBlue: "#4d7082",
+				grey: "#b6b6b7",
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
 				card: {

@@ -69,7 +69,7 @@ const HeroCarousel = () => {
 					<div
 						className={cn(
 							"w-12 h-px rounded-full",
-							index === selectedIndex ? "bg-gold" : "bg-slate-300"
+							index === selectedIndex ? "bg-mainBlue" : "bg-slate-300"
 						)}
 					/>
 				))}

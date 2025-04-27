@@ -13,12 +13,15 @@ import {
 } from "~/components/ui/navigation-menu";
 import AnimatedMenuOptions from "./animated-menu-items";
 import { Separator } from "~/components/ui/separator";
+import Logo from "./logo";
+import NavLink from "./nav-link";
+import AnimatedLink from "./animated-link";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
 	const data: NavItem[] = [
 		{
 			label: "About us",
-			path: "/",
+			path: "/about-us",
 		},
 		{
 			label: "Products & Services",
@@ -26,15 +29,15 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 			options: [
 				{
 					label: "Bulk Commodities",
-					path: "/",
+					path: "/bulk-commodities",
 				},
 				{
 					label: "Agricultural Commodities",
-					path: "/",
+					path: "/agricultural-commodities",
 				},
 				{
 					label: "Petroleum Commodities",
-					path: "/",
+					path: "/petroleum-commodities",
 				},
 			],
 		},
@@ -49,7 +52,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 			<header>
 				<nav className="sm:px-24 py-6 px-4 flex justify-between items-center">
 					<Link to="/">
-						<p>Cornerstone Resources</p>
+						<Logo />
 					</Link>
 					<div className="hidden md:block">
 						<div className="flex flex-row gap-5 items-center justify-end">
@@ -58,13 +61,12 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 									{data.map((item, index) => (
 										<NavigationMenuItem key={index}>
 											{!item.options && (
-												<Link to={item.path}>
-													<NavigationMenuLink
-														className={navigationMenuTriggerStyle()}
-													>
-														{item.label}
-													</NavigationMenuLink>
-												</Link>
+												<NavigationMenuLink
+													className={navigationMenuTriggerStyle()}
+													href={item.path}
+												>
+													{item.label}
+												</NavigationMenuLink>
 											)}
 											{item.options && (
 												<>
@@ -94,32 +96,21 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 								</NavigationMenuList>
 							</NavigationMenu>
 
-							<Link
-								to="/"
-								className="flex p-2 border border-1 border-black rounded-full text-sm w-32 items-center justify-center"
-							>
-								Contact us
-							</Link>
+							<AnimatedLink path="/" title="Contact us" />
 						</div>
 					</div>
 				</nav>
 			</header>
 			{children}
 			<footer className="flex flex-col gap-12 sm:px-24 px-4 py-16">
-				<div className="flex flex-row w-full justify-between items-center ">
+				<div className="flex sm:flex-row flex-col w-full justify-between sm:items-center">
 					<Link to="/">
-						<p>Cornerstone Resources</p>
+						<Logo />
 					</Link>
 					<div className="flex flex-row sm:space-x-10 space-x-5">
-						<Link to="/" className="font-light text-sm">
-							<p>About us</p>
-						</Link>
-						<Link to="/" className="font-light text-sm">
-							<p>Sustainability</p>
-						</Link>
-						<Link to="/" className="font-light text-sm">
-							<p>Contact us</p>
-						</Link>
+						<NavLink path="/" title="About us" />
+						<NavLink path="/" title="Sustainability" />
+						<NavLink path="/" title="Contact us" />
 					</div>
 				</div>
 				<Separator />
@@ -127,7 +118,12 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 					<p className="font-light text-sm">
 						1 Tamchele Ave, Beverley, Sandton, Johannesburg, 2191
 					</p>
-					<p className="font-medium text-sm">info@csresources.co.za</p>
+					<a
+						href="mailto:info@csresources.co.za"
+						className="font-medium text-sm text-lightBlue cursor-pointer"
+					>
+						info@csresources.co.za
+					</a>
 				</div>
 			</footer>
 		</div>
