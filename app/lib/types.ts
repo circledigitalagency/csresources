@@ -28,3 +28,19 @@ export interface LogoCarouselProps {
 	}[];
 	autoplaySpeed?: number;
 }
+
+export interface Marker {
+	position: google.maps.LatLngLiteral;
+	title?: string;
+}
+
+export interface GoogleMapProps {
+	apiKey: string;
+	center?: google.maps.LatLngLiteral;
+	zoom?: number;
+	markers?: Marker[];
+}
+
+export interface LoaderData {
+	apiKey: string;
+}

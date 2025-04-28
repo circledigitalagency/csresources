@@ -35,7 +35,7 @@ const AboutUs = () => {
 							<p>
 								CORNERSTONE RESOURCES 411 (PTY) LTD is a 100% Black-owned South
 								African company specialising in the wholesale supply and
-								distribution of key bolk commodities, agricoltural products, and
+								distribution of key bulk commodities, agricultural products, and
 								petroleum products. We stand as a reliable and dynamic partner,
 								committed to powering South African industries and communities.{" "}
 							</p>
@@ -47,14 +47,14 @@ const AboutUs = () => {
 						/>
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
-						<img src="/assets/industry.jpg" alt="industry" />
+						<img src="/assets/about-us-3.jpg" alt="our journey" />
 						<div className="flex flex-col space-y-5">
 							<p className="font-medium text-lg">Our Journey</p>
 							<p>
 								Founded in 2007, CORNERSTONE RESOURCES 411 (PTY) LTD began its
 								journey as a fuel retailer. Recognising the growing needs of the
 								South African market, we strategically expanded our operations
-								into the supply and distribution of essential bolk commodities,
+								into the supply and distribution of essential bulk commodities,
 								including coal, chrome, and maize, alongside vital petroleum
 								products. Over the years, this evolution has positioned us as a
 								leading supplier of diverse commodities, supporting various
@@ -64,8 +64,8 @@ const AboutUs = () => {
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
 						<img
-							src="/assets/industry.jpg"
-							alt="industry"
+							src="/assets/community.jpg"
+							alt="community"
 							className="sm:hidden block"
 						/>
 						<div className="flex flex-col space-y-5">
@@ -85,8 +85,8 @@ const AboutUs = () => {
 							</p>
 						</div>
 						<img
-							src="/assets/industry.jpg"
-							alt="industry"
+							src="/assets/community.jpg"
+							alt="community"
 							className="sm:block hidden"
 						/>
 					</div>

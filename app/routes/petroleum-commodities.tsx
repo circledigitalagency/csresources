@@ -61,7 +61,7 @@ const Page = () => {
 						/>
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
-						<img src="/assets/chrome-ore.jpg" alt="chrome" />
+						<img src="/assets/fuel-farm.jpg" alt="fuel-farm" />
 						<div className="flex flex-col space-y-5">
 							<p className="font-medium text-lg">Petrol</p>
 							<p>
@@ -72,8 +72,8 @@ const Page = () => {
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
 						<img
-							src="/assets/extraction-footer.jpg"
-							alt="other materials"
+							src="/assets/oils-lubricants.jpg"
+							alt="oils-lubricantss"
 							className="sm:hidden block"
 						/>
 						<div className="flex flex-col space-y-5">
@@ -84,8 +84,8 @@ const Page = () => {
 							</p>
 						</div>
 						<img
-							src="/assets/extraction-footer.jpg"
-							alt="other materials"
+							src="/assets/oils-lubricants.jpg"
+							alt="oils-lubricants"
 							className="sm:block hidden"
 						/>
 					</div>

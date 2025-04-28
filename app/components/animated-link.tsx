@@ -6,7 +6,7 @@ const AnimatedLink = ({ path, title }: { path: string; title: string }) => {
 			<Link
 				to={path}
 				className="
-sm:flex p-2 border border-1 border-mainBlue rounded-full text-sm w-32 items-center justify-center hidden
+sm:flex p-2 border border-1 border-mainBlue rounded-full text-sm w-32 items-center justify-center 
 relative overflow-hidden group
 "
 			>

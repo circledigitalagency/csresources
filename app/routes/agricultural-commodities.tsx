@@ -52,7 +52,10 @@ const Page = () => {
 						/>
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
-						<img src="/assets/maze.jpg" alt="maze" />
+						<img
+							src="/assets/other-agricultural-products.jpg"
+							alt="other-agricultural-products"
+						/>
 						<div className="flex flex-col space-y-5">
 							<p className="font-medium text-lg">Other Agricultural Products</p>
 							<p>In addition to maize, our offerings include:</p>
@@ -66,8 +69,8 @@ const Page = () => {
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
 						<img
-							src="/assets/maze.jpg"
-							alt="maze"
+							src="/assets/gas-farm.jpg"
+							alt="gas-farm"
 							className="sm:hidden block"
 						/>
 						<div className="flex flex-col space-y-5">
@@ -79,13 +82,13 @@ const Page = () => {
 							</p>
 						</div>
 						<img
-							src="/assets/maze.jpg"
-							alt="maze"
+							src="/assets/gas-farm.jpg"
+							alt="gas-farm"
 							className="sm:block hidden"
 						/>
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
-						<img src="/assets/maze.jpg" alt="maze" />
+						<img src="/assets/sustainability.jpg" alt="sustainability" />
 						<div className="flex flex-col space-y-5">
 							<p className="font-medium text-lg">
 								Commitment to Sustainability

@@ -27,7 +27,6 @@
 	height: var(--slide-height);
 	width: 100%;
 	user-select: none;
-	background-color: blueviolet;
 }
 .embla__controls {
 	display: flex;

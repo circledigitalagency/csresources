@@ -15,12 +15,10 @@ export default function LogoCarousel({
 		align: "start",
 	});
 
-	const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-	const [autoplayInterval, setAutoplayInterval] =
-		useState<NodeJS.Timeout | null>(null);
+	const [autoplayInterval, setAutoplayInterval] = useState<number>(1000);
 
 	const startAutoplay = useCallback(() => {
-		if (!emblaApi || !isAutoPlaying) return;
+		if (!emblaApi) return;
 
 		if (autoplayInterval) clearInterval(autoplayInterval);
 
@@ -28,8 +26,8 @@ export default function LogoCarousel({
 			if (emblaApi) emblaApi.scrollNext();
 		}, autoplaySpeed);
 
-		setAutoplayInterval(interval);
-	}, [emblaApi, isAutoPlaying, autoplaySpeed, autoplayInterval]);
+		setAutoplayInterval(1000);
+	}, [emblaApi, autoplaySpeed, autoplayInterval]);
 
 	useEffect(() => {
 		startAutoplay();
@@ -39,30 +37,14 @@ export default function LogoCarousel({
 		};
 	}, [emblaApi, startAutoplay, autoplayInterval]);
 
-	const pauseAutoplay = useCallback(() => {
-		setIsAutoPlaying(false);
-		if (autoplayInterval) {
-			clearInterval(autoplayInterval);
-			setAutoplayInterval(null);
-		}
-	}, [autoplayInterval]);
-
-	const resumeAutoplay = useCallback(() => {
-		setIsAutoPlaying(true);
-	}, []);
-
 	return (
-		<div
-			className={cn("overflow-hidden", className)}
-			onMouseEnter={pauseAutoplay}
-			onMouseLeave={resumeAutoplay}
-		>
+		<div className={cn("overflow-hidden", className)}>
 			<div className="overflow-hidden" ref={emblaRef}>
 				<div className="flex items-center">
 					{logos.map((logo, index) => (
 						<div
 							key={index}
-							className="flex-[0_0_auto] min-w-[80px] sm:min-w-[160px] md:min-w-[200px] mx-2 xs:mx-3 sm:mx-4 md:mx-6 flex items-center justify-center h-16 sm:h-20 md:h-24"
+							className="flex-[0_0_auto] sm:min-w-[160px] mx-2 xs:mx-3 sm:mx-4 md:mx-6 flex items-center justify-center h-16 sm:h-20 md:h-24"
 						>
 							<div className="relative w-full h-10 xs:h-12 sm:h-14 md:h-16 flex items-center justify-center transition-all duration-300">
 								<img

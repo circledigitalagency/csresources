@@ -71,7 +71,7 @@ const Home = () => {
 						</div>
 					))}
 				</div>
-				<div className="sm:px-28 px-4 flex flex-col justify-center items-center space-y-12 py-10">
+				<div className="sm:px-28 flex flex-col justify-center items-center space-y-12 py-10">
 					<Header title="Our Vision" />
 					<p className="font-light text-base sm:w-2/3 w-[95%] text-center">
 						Powering South African progress by being the most trusted source for

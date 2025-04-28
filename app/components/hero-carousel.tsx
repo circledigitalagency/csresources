@@ -71,6 +71,7 @@ const HeroCarousel = () => {
 							"w-12 h-px rounded-full",
 							index === selectedIndex ? "bg-mainBlue" : "bg-slate-300"
 						)}
+						key={index}
 					/>
 				))}
 			</div>

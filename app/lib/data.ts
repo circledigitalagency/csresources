@@ -4,7 +4,36 @@ import {
 	ServiceIcon,
 	TipsIcon,
 } from "hugeicons-react";
-import { Commodities, Offerings } from "./types";
+import { Commodities, NavItem, Offerings } from "./types";
+
+export const menu: NavItem[] = [
+	{
+		label: "About us",
+		path: "/about-us",
+	},
+	{
+		label: "Products & Services",
+		path: "/",
+		options: [
+			{
+				label: "Bulk Commodities",
+				path: "/bulk-commodities",
+			},
+			{
+				label: "Agricultural Commodities",
+				path: "/agricultural-commodities",
+			},
+			{
+				label: "Petroleum Commodities",
+				path: "/petroleum-commodities",
+			},
+		],
+	},
+	{
+		label: "Sustainability",
+		path: "/sustainability",
+	},
+];
 
 export const keyOfferings: Offerings[] = [
 	{
@@ -30,21 +59,21 @@ export const commodities: Commodities[] = [
 		label: "Bulk",
 		description:
 			"We specialise in the wholesale supply of key bulk commodities, with a strong focus on coal, chrome, and other essential industrial materials.",
-		path: "/",
+		path: "/bulk-commodities",
 		image: "/assets/coal.jpg",
 	},
 	{
 		label: "Agricultural",
 		description:
 			"Our agricultural commodities division plays a significant role in supporting the agricultural sector with high-demand products, including our key export product.",
-		path: "/",
+		path: "/agricultural-commodities",
 		image: "/assets/agri.jpg",
 	},
 	{
 		label: "Petroleum",
 		description:
 			"Cornerstone RESOURCES 411 (PTY) LTD remains a trusted supplier of petroleum products, which play a critical role in fueling industries and supporting essential infrastructure.",
-		path: "/",
+		path: "/petroleum-commodities",
 		image: "/assets/petro.jpg",
 	},
 ];

@@ -16,37 +16,10 @@ import { Separator } from "~/components/ui/separator";
 import Logo from "./logo";
 import NavLink from "./nav-link";
 import AnimatedLink from "./animated-link";
+import BurgerMenu from "./burger-menu";
+import { menu } from "~/lib/data";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
-	const data: NavItem[] = [
-		{
-			label: "About us",
-			path: "/about-us",
-		},
-		{
-			label: "Products & Services",
-			path: "/",
-			options: [
-				{
-					label: "Bulk Commodities",
-					path: "/bulk-commodities",
-				},
-				{
-					label: "Agricultural Commodities",
-					path: "/agricultural-commodities",
-				},
-				{
-					label: "Petroleum Commodities",
-					path: "/petroleum-commodities",
-				},
-			],
-		},
-		{
-			label: "Sustainability",
-			path: "/",
-		},
-	];
-
 	return (
 		<div className="flex flex-col overflow-y-auto">
 			<header>
@@ -58,7 +31,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 						<div className="flex flex-row gap-5 items-center justify-end">
 							<NavigationMenu>
 								<NavigationMenuList>
-									{data.map((item, index) => (
+									{menu.map((item, index) => (
 										<NavigationMenuItem key={index}>
 											{!item.options && (
 												<NavigationMenuLink
@@ -96,9 +69,10 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 								</NavigationMenuList>
 							</NavigationMenu>
 
-							<AnimatedLink path="/" title="Contact us" />
+							<AnimatedLink path="/contact-us" title="Contact us" />
 						</div>
 					</div>
+					<BurgerMenu />
 				</nav>
 			</header>
 			{children}
@@ -108,9 +82,9 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 						<Logo />
 					</Link>
 					<div className="flex flex-row sm:space-x-10 space-x-5">
-						<NavLink path="/" title="About us" />
-						<NavLink path="/" title="Sustainability" />
-						<NavLink path="/" title="Contact us" />
+						<NavLink path="/about-us" title="About us" />
+						<NavLink path="/sustainability" title="Sustainability" />
+						<NavLink path="/contact-us" title="Contact us" />
 					</div>
 				</div>
 				<Separator />
@@ -118,6 +92,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 					<p className="font-light text-sm">
 						1 Tamchele Ave, Beverley, Sandton, Johannesburg, 2191
 					</p>
+					<p className="font-light text-sm">010 085 1127</p>
 					<a
 						href="mailto:info@csresources.co.za"
 						className="font-medium text-sm text-lightBlue cursor-pointer"
