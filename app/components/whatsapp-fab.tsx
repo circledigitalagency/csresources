@@ -37,8 +37,6 @@ export default function WhatsAppButton({
 				</svg>
 			</a>
 
-			{isHovered && <span className="whatsapp-tooltip">Chat with us!</span>}
-
 			<style>{`
 				.whatsapp-button {
 					position: fixed;
