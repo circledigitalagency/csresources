@@ -90,7 +90,7 @@ const Page = () => {
 						/>
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
-						<img src="/assets/extraction-footer.jpg" alt="other materials" />
+						<img src="/assets/quality-assurance.jpg" alt="quality-assurance" />
 						<div className="flex flex-col space-y-5">
 							<p className="font-medium text-lg">
 								Quality and Safety Assurance

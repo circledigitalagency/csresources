@@ -6,7 +6,7 @@ import { ViewIcon, ViewOffSlashIcon } from "hugeicons-react";
 
 interface InputProps extends React.ComponentProps<"input"> {
 	label?: string;
-	error?: string;
+	error?: string[];
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(

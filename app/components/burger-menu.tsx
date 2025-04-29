@@ -52,7 +52,7 @@ const BurgerMenu = () => {
 											</div>
 
 											{openOptions && (
-												<div className="flex flex-col gap-2 items-start px-4 mt-2 mb-2">
+												<div className="flex flex-col gap-2 items-start px-2 mt-2 mb-2">
 													{item.options?.map((option, index) => (
 														<div key={index}>
 															<AnimatedMenuOptions
@@ -69,7 +69,12 @@ const BurgerMenu = () => {
 								</div>
 							))}
 						</div>
-						<AnimatedLink path="/contact-us" title="Contact us" />
+						<Link
+							to="/contact-us"
+							className="sm:hidden p-2 border border-1 border-black rounded-full text-sm w-32 items-center justify-center flex"
+						>
+							Contact us
+						</Link>
 					</SheetDescription>
 				</SheetHeader>
 			</SheetContent>

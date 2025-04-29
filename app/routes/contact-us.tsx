@@ -12,21 +12,11 @@ import Header from "~/components/header";
 import MainLayout from "~/components/main-layout";
 import { LoaderData } from "~/lib/types";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { Button } from "~/components/ui/button";
-import {
-	Form as ShadcnForm,
-	FormControl,
-	FormField,
-	FormItem,
-	FormLabel,
-	FormMessage,
-} from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
-import { Textarea } from "~/components/ui/textarea";
 import * as nodemailer from "nodemailer";
-import { useState } from "react";
+import { useEffect, useRef, useTransition } from "react";
+import { toast } from "~/hooks/use-toast";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Contact us" }];
@@ -61,9 +51,6 @@ export async function action({ request }: ActionFunctionArgs) {
 	}
 
 	const validatedData = result.data;
-
-	console.log("result.success: ", result.success);
-	console.log("validatedData: ", validatedData);
 
 	try {
 		const transporter = nodemailer.createTransport({
@@ -103,7 +90,6 @@ export async function action({ request }: ActionFunctionArgs) {
 
 		return json<ActionData>({ success: true });
 	} catch (error) {
-		console.error("Email error:", error);
 		return json<ActionData>({
 			success: false,
 			formErrors: "Failed to send email. Please try again later.",
@@ -113,7 +99,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
 const formSchema = z.object({
 	name: z.string().min(2, "Name is required").max(50),
-	email: z.string().email().min(2, "Email is required").max(50),
+	email: z.string().email(),
 	phone: z.string(),
 	message: z.string().min(2, "Message is required").max(150),
 });
@@ -123,6 +109,25 @@ const Page = () => {
 	const actionData = useActionData<ActionData>();
 	const navigation = useNavigation();
 	const isSubmitting = navigation.state === "submitting";
+	const $form = useRef<HTMLFormElement>(null);
+
+	useEffect(() => {
+		if (actionData?.success) {
+			toast({
+				title: "Thank you!",
+				description: "Your message has been sent! We'll be in touch soon.",
+				variant: "default",
+			});
+			$form.current?.reset();
+		} else if (!actionData?.success && !!actionData?.formErrors) {
+			toast({
+				title: "Error",
+				description:
+					"We're having trouble sending your message. Please try again shortly.",
+				variant: "destructive",
+			});
+		}
+	}, [actionData?.success]);
 
 	return (
 		<MainLayout>
@@ -130,42 +135,30 @@ const Page = () => {
 				<div className="flex flex-col space-y-28 w-[90%] sm:px-40">
 					<Header title="Contact us" fontSize="text-3xl" />
 					<div className="w-full grid sm:grid-cols-2 grid-cols-1 gap-10">
-						{actionData?.success && (
-							<div className="mb-4 p-4 bg-green-100 text-green-800 rounded">
-								Thank you! Your message has been sent.
-							</div>
-						)}
-
-						{actionData?.success === false && actionData.formErrors && (
-							<div className="mb-4 p-4 bg-red-100 text-red-800 rounded">
-								{actionData.formErrors}
-							</div>
-						)}
-
-						<Form method="post" className="space-y-5">
+						<Form method="post" className="space-y-5" ref={$form}>
 							<Input
 								label="Name"
 								name="name"
 								placeholder="Enter your name"
-								//error={actionData?.errors?.name}
+								error={actionData?.errors?.name}
 							/>
 							<Input
 								label="Email"
 								name="email"
 								placeholder="Enter your email"
-								//error={actionData?.errors?.email}
+								error={actionData?.errors?.email}
 							/>
 							<Input
 								label="Phone Number"
 								name="phone"
 								placeholder="Enter your phone number"
-								//error={actionData?.errors?.phone}
+								error={actionData?.errors?.phone}
 							/>
 							<Input
 								label="Message"
 								name="message"
 								placeholder="Enter your message"
-								//error={actionData?.errors?.message}
+								error={actionData?.errors?.message}
 							/>
 							<Button disabled={isSubmitting}>
 								{isSubmitting ? "Sending..." : "Send"}

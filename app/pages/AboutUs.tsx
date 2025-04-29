@@ -24,9 +24,9 @@ const AboutUs = () => {
 					<Header title="About Cornerstone Resources 411" fontSize="text-3xl" />
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">
 						<img
-							src="/assets/maze.jpg"
-							alt="maze"
-							className="h-[20vh] w-full sm:hidden block"
+							src="/assets/handshake.jpg"
+							alt="handshake"
+							className="w-full sm:hidden block"
 						/>
 						<div className="flex flex-col space-y-5">
 							<p className="font-medium text-lg">
@@ -41,9 +41,9 @@ const AboutUs = () => {
 							</p>
 						</div>
 						<img
-							src="/assets/maze.jpg"
-							alt="maze"
-							className="h-[20vh] w-full hidden sm:block"
+							src="/assets/handshake.jpg"
+							alt="handshake"
+							className="w-full hidden sm:block"
 						/>
 					</div>
 					<div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-40">

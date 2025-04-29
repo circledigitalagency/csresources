@@ -1,18 +1,21 @@
 import { Link } from "@remix-run/react";
 import LogoCarousel from "~/components/affiliate-carousel";
 import Header from "~/components/header";
-import HeroCarousel from "~/components/hero-carousel";
 import MainLayout from "~/components/main-layout";
 import { keyOfferings, commodities, affiliates } from "~/lib/data";
-import { JusticeScale01Icon } from "hugeicons-react";
 import AnimatedLink from "~/components/animated-link";
+import HeroVideo from "~/components/video-hero";
 
 const Home = () => {
 	return (
 		<MainLayout>
 			<div className="flex flex-col space-y-16">
-				<HeroCarousel />
-				<div className="sm:px-28 px-4 flex flex-col justify-center items-center space-y-12 py-10">
+				<HeroVideo
+					videoSrc="/videos/coal.mp4"
+					fallbackImageSrc=""
+					height="60vh"
+				/>
+				<div className="sm:px-28 px-4 flex flex-col justify-center items-center space-y-12 sm:py-10">
 					<Header title="Cornerstone Resources 411" />
 					<div className="sm:grid sm:grid-cols-2 flex flex-col gap-10 sm:w-[75%]">
 						<div className="flex flex-col space-y-5">
@@ -81,10 +84,10 @@ const Home = () => {
 					<div className="grid sm:grid-cols-3 grid-cols-1 gap-10">
 						{commodities.map((com, index) => (
 							<div
-								className="w-[25rem] h-[25rem] relative rounded-xl group cursor-pointer"
+								className="sm:w-[25rem] sm:h-[25rem] w-[20rem] h-[20rem] relative rounded-xl group cursor-pointer"
 								key={index}
 							>
-								<div className="absolute w-[25rem] h-[25rem] rounded-xl overflow-hidden">
+								<div className="absolute sm:w-[25rem] sm:h-[25rem] w-[20rem] h-[20rem] rounded-xl overflow-hidden">
 									<img
 										src={com.image || "/placeholder.svg"}
 										alt={com.label}
@@ -93,14 +96,16 @@ const Home = () => {
 									<div className="absolute inset-0 bg-black/50 z-10"></div>
 								</div>
 								<div className="relative z-10 flex flex-col justify-center h-full p-6 space-y-10">
-									<p className="text-white text-xl font-semibold">
+									<p className="text-white sm:text-xl text-lg font-semibold">
 										{com.label}
 									</p>
-									<p className="text-white text-base">{com.description}</p>
+									<p className="text-white sm:text-base text-sm">
+										{com.description}
+									</p>
 									<div className="flex">
 										<Link
 											to={com.path}
-											className="flex bg-white rounded-full p-2 w-2/6 justify-center"
+											className="flex bg-white rounded-full p-2 sm:w-2/6 justify-center"
 										>
 											Learn more
 										</Link>

@@ -7,8 +7,10 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import { Toaster } from "~/components/ui/toaster";
 
 import "./tailwind.css";
+import WhatsAppButton from "./components/whatsapp-fab";
 
 export const links: LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,6 +36,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			</head>
 			<body>
 				{children}
+				<WhatsAppButton
+					phoneNumber="+635007223"
+					message="Hi there! I found your website and want to know more about your services."
+				/>
+				<Toaster />
 				<ScrollRestoration />
 				<Scripts />
 			</body>

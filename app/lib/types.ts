@@ -44,3 +44,8 @@ export interface GoogleMapProps {
 export interface LoaderData {
 	apiKey: string;
 }
+
+export interface WhatsAppButtonProps {
+	phoneNumber: string;
+	message?: string;
+}
