@@ -52,7 +52,7 @@ const BurgerMenu = () => {
 											</div>
 
 											{openOptions && (
-												<div className="flex flex-col gap-2 items-start px-2 mt-2 mb-2">
+												<div className="flex flex-col space-y-4 items-start px-2 mt-4 mb-4">
 													{item.options?.map((option, index) => (
 														<div key={index}>
 															<AnimatedMenuOptions
