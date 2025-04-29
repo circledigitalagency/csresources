@@ -5,13 +5,16 @@ import MainLayout from "~/components/main-layout";
 import { keyOfferings, commodities, affiliates } from "~/lib/data";
 import AnimatedLink from "~/components/animated-link";
 import HeroVideo from "~/components/video-hero";
-import { HomeLoaderData } from "~/lib/types";
 
-const Home = ({ videoSrc }: HomeLoaderData) => {
+const Home = () => {
 	return (
 		<MainLayout>
 			<div className="flex flex-col space-y-16">
-				<HeroVideo videoSrc={videoSrc} fallbackImageSrc="" height="60vh" />
+				<HeroVideo
+					videoSrc="https://res.cloudinary.com/dg1g6ctku/video/upload/v1745941986/coal_fjm3wz.mp4"
+					fallbackImageSrc=""
+					height="60vh"
+				/>
 				<div className="sm:px-28 px-4 flex flex-col justify-center items-center space-y-12 sm:py-10">
 					<Header title="Cornerstone Resources 411" />
 					<div className="sm:grid sm:grid-cols-2 flex flex-col gap-10 sm:w-[75%]">
