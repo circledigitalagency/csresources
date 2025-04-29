@@ -49,3 +49,8 @@ export interface WhatsAppButtonProps {
 	phoneNumber: string;
 	message?: string;
 }
+
+export type HomeLoaderData = {
+	videoSrc: string;
+	fallbackImageSrc: string;
+};
