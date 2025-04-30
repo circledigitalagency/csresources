@@ -5,11 +5,11 @@ import { GoogleMapProps } from "~/lib/types";
 
 export default function GoogleMap({
 	apiKey,
-	center = { lat: -25.9963, lng: 28.0308 },
-	zoom = 10,
+	center = { lat: -26.000125, lng: 28.014553 },
+	zoom = 14,
 	markers = [
 		{
-			position: { lat: -25.9963, lng: 28.0308 },
+			position: { lat: -26.000125, lng: 28.014553 },
 			title: "1 Tamchele Ave, Beverley, Sandton, Johannesburg, 2191",
 		},
 	],

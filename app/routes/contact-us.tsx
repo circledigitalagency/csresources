@@ -165,11 +165,7 @@ const Page = () => {
 							</Button>
 						</Form>
 
-						<GoogleMap
-							apiKey={apiKey}
-							center={{ lat: -25.9963, lng: 28.0308 }}
-							zoom={12}
-						/>
+						<GoogleMap apiKey={apiKey} zoom={12} />
 					</div>
 				</div>
 
