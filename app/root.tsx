@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			<body>
 				{children}
 				<WhatsAppButton
-					phoneNumber="+635007223"
+					phoneNumber="+726012668"
 					message="Hi there! I found your website and want to know more about your services."
 				/>
 				<Toaster />
