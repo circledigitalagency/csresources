@@ -17,6 +17,7 @@ import { Input } from "~/components/ui/input";
 import * as nodemailer from "nodemailer";
 import { useEffect, useRef, useTransition } from "react";
 import { toast } from "~/hooks/use-toast";
+import BackgroundImageContainer from "~/components/bg-image";
 
 export const meta: MetaFunction = () => {
 	return [{ title: "Contact us" }];
@@ -131,53 +132,46 @@ const Page = () => {
 
 	return (
 		<MainLayout>
-			<div className="flex flex-col justify-center items-center space-y-28">
-				<div className="flex flex-col space-y-28 w-[90%] sm:px-40">
-					<Header title="Contact us" fontSize="text-3xl" />
-					<div className="w-full grid sm:grid-cols-2 grid-cols-1 gap-10">
-						<Form method="post" className="space-y-5" ref={$form}>
-							<Input
-								label="Name"
-								name="name"
-								placeholder="Enter your name"
-								error={actionData?.errors?.name}
-							/>
-							<Input
-								label="Email"
-								name="email"
-								placeholder="Enter your email"
-								error={actionData?.errors?.email}
-							/>
-							<Input
-								label="Phone Number"
-								name="phone"
-								placeholder="Enter your phone number"
-								error={actionData?.errors?.phone}
-							/>
-							<Input
-								label="Message"
-								name="message"
-								placeholder="Enter your message"
-								error={actionData?.errors?.message}
-							/>
-							<Button disabled={isSubmitting}>
-								{isSubmitting ? "Sending..." : "Send"}
-							</Button>
-						</Form>
+			<BackgroundImageContainer bgImage="bg-contact-bg-image py-28">
+				<div className="flex flex-col justify-center items-center space-y-28">
+					<div className="flex flex-col space-y-28 w-[90%] sm:px-40">
+						<Header title="Contact us" fontSize="text-3xl" />
+						<div className="w-full grid sm:grid-cols-2 grid-cols-1 gap-10">
+							<Form method="post" className="space-y-5" ref={$form}>
+								<Input
+									label="Name"
+									name="name"
+									placeholder="Enter your name"
+									error={actionData?.errors?.name}
+								/>
+								<Input
+									label="Email"
+									name="email"
+									placeholder="Enter your email"
+									error={actionData?.errors?.email}
+								/>
+								<Input
+									label="Phone Number"
+									name="phone"
+									placeholder="Enter your phone number"
+									error={actionData?.errors?.phone}
+								/>
+								<Input
+									label="Message"
+									name="message"
+									placeholder="Enter your message"
+									error={actionData?.errors?.message}
+								/>
+								<Button disabled={isSubmitting}>
+									{isSubmitting ? "Sending..." : "Send"}
+								</Button>
+							</Form>
 
-						<GoogleMap apiKey={apiKey} zoom={12} />
+							<GoogleMap apiKey={apiKey} zoom={12} />
+						</div>
 					</div>
 				</div>
-
-				<div className="w-full h-96 relative">
-					<img
-						src="/assets/contact-footer.jpg"
-						alt="coal"
-						className="w-full h-full object-cover"
-					/>
-					<div className="absolute inset-0 bg-black/50 z-10"></div>
-				</div>
-			</div>
+			</BackgroundImageContainer>
 		</MainLayout>
 	);
 };

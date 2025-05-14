@@ -81,7 +81,7 @@ const Home = () => {
 						quality industrial and agricultural commodities, contributing
 						directly to the country's economic vitality.
 					</p>
-					<div className="grid sm:grid-cols-3 grid-cols-1 gap-10">
+					<div className="grid md:grid-cols-1 lg:grid-cols-3 grid-cols-1 gap-10">
 						{commodities.map((com, index) => (
 							<div
 								className="sm:w-[25rem] sm:h-[25rem] w-[20rem] h-[20rem] relative rounded-xl group cursor-pointer"

@@ -1,6 +1,6 @@
 const Logo = () => {
 	return (
-		<div className="h-24 w-60 relative overflow-hidden">
+		<div className="h-32 w-60 md:w-72 relative overflow-hidden">
 			<img
 				src="/assets/logo.svg"
 				alt="logo"
