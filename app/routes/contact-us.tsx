@@ -167,7 +167,20 @@ const Page = () => {
 								</Button>
 							</Form>
 
-							<GoogleMap apiKey={apiKey} zoom={12} />
+							<div className="aspect-[4/3] w-full">
+								<iframe
+									//src="https://www.google.com/maps/place/1+Tamchele+Ave,+Beverley,+Johannesburg,+2191/data=!4m2!3m1!1s0x1e9576cd930d6ad1:0x73f1f51ab903bf72?sa=X&ved=1t:242&ictx=111"
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.204435516484!2d28.014553!3d-26.000125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957748196b936b%3A0x328d99067e0ce467!2s1%20Tamchele%20Ave%2C%20Beverley%2C%20Sandton%2C%20Johannesburg%2C%202191!5e0!3m2!1sen!2sza!4v1730134200000!5m2!1sen!2sza"
+									width="100%"
+									height="100%"
+									style={{ border: 0 }}
+									allowFullScreen
+									loading="lazy"
+									referrerPolicy="no-referrer-when-downgrade"
+									title="CSResources Location"
+									className="rounded-b-lg"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
